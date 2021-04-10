@@ -2,9 +2,6 @@
 // var taskBlock = document.getElementsByClassName("task-block")
 var taskBlock = $(".task-block");
 var currentHour = moment().format("H");
-var taskItems = [];
-console.log(currentHour)
-
 
 // Displays current date and time at top of page.
 function displayTime() {
@@ -37,25 +34,17 @@ function styleRows() {
 // Runs selected functions once page is loaded.
 $(window).on("load", function() {
     styleRows();
-    // displayTime();
 })
 
+// When save button is clicked, task is saved in local storage using the hour as a key.
 $(".saveBtn").on("click", function() {
-var taskToSave = $(this).siblings("textarea").val();
-var blockTime = $(this).siblings("textarea").attr("hour");
-localStorage.setItem(blockTime, taskToSave);
+    var taskToSave = $(this).siblings("textarea").val();
+    var blockTime = $(this).siblings("textarea").attr("hour");
+    localStorage.setItem(blockTime, taskToSave);
 })
 
+// Populate task list from local storage.
 $("textarea").each(function(){
     var blockTime = $(this).attr("hour");
     $(this).val(localStorage.getItem(blockTime));
 })
-
-
-// create array of objects of textarea.innerText and hour attribute
-// JSON stringify array
-// Store string in localStorage
-
-// Pull string from local storage
-// JSON parse string into array
-// display objects and textarea.innerText

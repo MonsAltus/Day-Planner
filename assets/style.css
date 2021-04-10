@@ -31,14 +31,12 @@ textarea {
 
 .table-header {
   padding-top: 40px;
-  /* height: 30px; */
   text-align: center;
   font-weight: bolder;
 }
 
 .time-block {
   text-align: center;
-  /* border-radius: 15px; */
   padding-top: 15px;
   font-weight: bolder;
 }
@@ -71,7 +69,6 @@ textarea {
 
 .future {
   background-color: #798ee4;
-  /* background-color: #06aed5; */
   color: black;
 }
 
