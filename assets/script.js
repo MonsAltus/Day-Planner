@@ -1,18 +1,18 @@
 // Declare initial variables.
 // var taskBlock = document.getElementsByClassName("task-block")
 var taskBlock = $(".task-block");
-var currentHour = moment().format("H");
 
 // Displays current date and time at top of page.
 function displayTime() {
     var currentTimeDate = moment().format("[It is ]MMM DD, YYYY [at] hh:mm A");
     $("#currentDay").text(currentTimeDate);
 }
-// Runs function displayTime every second.
-setInterval(displayTime, 1000);
+// Runs function displayTime every 5 seconds.
+setInterval(displayTime, 5000);
 
 //Style the task blocks based on current time.
 function styleRows() {
+    var currentHour = moment().format("H");
     taskBlock.each(function() {
         var thisBlock = $(this);
         var thisBlockHour = parseInt(thisBlock.attr("hour"));
@@ -30,6 +30,8 @@ function styleRows() {
         }
     })
 }
+// Runs function styleRows every minute.
+setInterval(styleRows, 60000);
 
 // Runs selected functions once page is loaded.
 $(window).on("load", function() {

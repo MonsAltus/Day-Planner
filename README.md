@@ -30,3 +30,5 @@ Click on a task block to enter a task, then click the save button on the right t
 ### Changelog:
 #### index.html:
 #### style.css:
+#### script.js:
+- added an interval timer for styleRows so that the color changes dynamically as the hours pass.
